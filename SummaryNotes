@@ -22,4 +22,28 @@ N/b compilation occurs once while interpretation occur each time the program is 
      -JM(The java virtual machine)
      -Java API (the java application programming interface.
 -Java API is a large collection fo ready-made software components that provides useful capabilities such as:
-       Graphical user in
+       Graphical user interface(GUI) widgets
+-Java API is grouped into  libraries(packages) of related components.
+-Java is platform independent
+-It is slow than the native code.
+-Java applet is a java program that adheres to certain convention that allow it to run within a java enabled browser.
+-server serves and supports clients on a network. Examples are:
+      Web server
+      proxy server.
+      mail server.
+      printer server.
+      boot server.
+      
+-servlets are similar to applet in that they  are runtime extensions of applications .
+-they run within the java server, configuring or tailoring the server.
+-The core API is the API included in every full implementation  of the java platform.
+-It gives the following features:
+                 The essentials:objects, strings, threads, numbers, inputs, and outputs, data structures, system properties, data and time.
+                 Applets: the sets of conventions used by java applets
+                 networking is the tcp and UDP sockets and IP addresses.
+                 internationalizations, helps in localising for users widewide.
+                 security - both low level and high level including the electronic signature.
+                 Software components - 
+                 object serialization - allows lightweight persistence and communication via Remote method invocation(RMI)
+                 java Database connectivity(JDBC) - provides uniform access to a wide range of relational databases.
+                 
