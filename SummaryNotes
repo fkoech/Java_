@@ -1,0 +1,25 @@
+Java - programming language and a platform.
+java is a highlevel language with the following characterist:
+       It is simple
+       object oriented
+       distributed
+       interpreted
+       Robust
+       Secure
+       Architecture-neutral
+       portable
+       high performince
+       multithreaded
+       Dynamic
+       
+-Java program is both compiled and interpreted.
+-With compiling, you transilate the java program into intermediate language called bytecodes.
+-the bytecode is interpreted by the java interpretor.
+N/b compilation occurs once while interpretation occur each time the program is executed.
+-We can also say java bytecodes is a machine code instruction for java virtual machine.
+-java program can be compiled into bytecode on any platform that has java compiler.
+-Java platform has two components, and this are :
+     -JM(The java virtual machine)
+     -Java API (the java application programming interface.
+-Java API is a large collection fo ready-made software components that provides useful capabilities such as:
+       Graphical user in
