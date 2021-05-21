@@ -46,4 +46,6 @@ N/b compilation occurs once while interpretation occur each time the program is 
                  Software components - 
                  object serialization - allows lightweight persistence and communication via Remote method invocation(RMI)
                  java Database connectivity(JDBC) - provides uniform access to a wide range of relational databases.
-                 
+-JVM and Java API insulates the java program from hardware dependancies.
+-Why java  - Quick to start 
+            
