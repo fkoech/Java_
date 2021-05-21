@@ -1,5 +1,5 @@
 Java - programming language and a platform.
-java is a highlevel language with the following characterist:
+java is a high level language with the following characterist:
        It is simple
        object oriented
        distributed
@@ -137,4 +137,17 @@ N/b compilation occurs once while interpretation occur each time the program is 
           }
       
            
+           Creating an HTML File that includes the Applet
+           ----------------------------------------------------
+    -Create a filename.html in the same director of otherfilename.class.
+    -HTML file should contains:
+        <html>
+        <head>
+        <title>title name</title>
+        </head>
+        <body>
+        <Applet Code="filename.class" Width 140px height=20>
+        </Applet>
+        </body>
+        </html>
             
