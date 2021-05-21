@@ -89,7 +89,52 @@ N/b compilation occurs once while interpretation occur each time the program is 
            -public - allows any class to call the main method
            -static - means that the main method is a class method
            -void - indicate that the main method does not return any value.
-      -On invoking the java interpreter,you start by calling the interpreter
+      -On invoking the java interpreter,you start by calling the class  main method, that will call other methods that will be required to run the application.
+      -
+      
+      Arguments to the main method
+      -------------------------------
+      -While declaring the main method, you can pass arguments: an array of string for example:
+            public static void main(String[] args)
+      -This array is the mechanism through which the java VM passes information to your application.
+      -Each string in the array is called a command-line argument.
+        
+        
+       Using Classes and Objects
+       --------------------------------
+       -System class provides system independent access to system dependent functionality.
+       -One feature provided by the system class is the standard output stream- a place to send text that usually  refers to the terminal  window in which you invoke 
+       the java interpreter.
+       -Standard output stream is used during the development cycle.
+       
+       Using a class variable
+       ----------------------------
+       Example:
+           System.out.println("AM learning java")
+       -The construct System.out is the full name of the out variable in the system class.
+       -The application never instantiates the system class. Instead, it refers to out directly through the class.
+       -This is because out  is a class variable -a variable  associated with a class rather than with an object.
+       -The java allocates a class variable once per class , no matter how many instances of that class exist.
+       -Class method implement class-specific bahavior.
+       
+       
+       Applet
+       ------
+       -It facilitates the java program to be included in HTML pages and executed in java enabled browser.
+       -To compile and run applet, you vsn use tools from the JDK
+       -JDK compiler allows you to compile any kind of java program.
+       -JDK applet viewer lets you run java applet.
+       
+       Creating java source file
+       --------------------------
+       -Create a file called LetUsAllLearnJava.java
+         import java.applet.Applet;
+         import java.awt.Graphics;
+         public class LetUsAllLearnJava extends Applet{
+           public void pain(Graphics g){
+           g.drawString("Dudes i fkoech tell you to learn java" 30, 20);
+           }
+          }
       
            
             
