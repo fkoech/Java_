@@ -48,4 +48,48 @@ N/b compilation occurs once while interpretation occur each time the program is 
                  java Database connectivity(JDBC) - provides uniform access to a wide range of relational databases.
 -JVM and Java API insulates the java program from hardware dependancies.
 -Why java  - Quick to start 
+           - Less  code
+           -better codes - ie encourages garbage collections that help avoid memory leaks.
+           -program faster.
+           
+-Practical exercise:
+       -Java file should have exact name as the class name.
+       -compiling the the java source file, you exacute;
+                javac filename.java
+       -After successful compilation, a file name filename.class is create in the same directory. This class file contains the java bytecode-platform-independt codes
+       interpreted by the java interpreter.
+       -To run the application type:
+            java filename.java
+       -Your output will be displayed in the window where you invoked the interpreter.
+       -Java methods(function-block of code) and variables should exist within a class.
+       -The entry point of java application is the main method.
+       -When you run application with class name, the interpreter invoke the main method in that class.
+       -The main method control the flow of the program.
+       -components of the java application are: objects, class, methods and java statements.
+       
+       
+       Comments in java
+       --------------------
+       -/* text */ 
+       -/** documentation */
+       -//text
+       
+       Defining a class
+       ---------------------
+       -Is the besic building block of an object-oriented language.
+       -It the blueprint  that describe the state and behavior associated with instances of that class.
+       -Instanciating a class means that you create an object that has the same state and behaviors as other instances of he same  class.
+       -state associated with  a class or object is stored in member variables.
+       -The behavior  associated with a class or object is implemented with method.
+       -Every java application must contain the main method:
+               public static void main(String[] args){
+                  //body of main method
+                 }
+      -The main method starts with three modifers
+           -public - allows any class to call the main method
+           -static - means that the main method is a class method
+           -void - indicate that the main method does not return any value.
+      -On invoking the java interpreter,you start by calling the interpreter
+      
+           
             
