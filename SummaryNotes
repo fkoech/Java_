@@ -151,3 +151,103 @@ N/b compilation occurs once while interpretation occur each time the program is 
         </body>
         </html>
             
+-Java applet is a program that adheres to a set of conventiond that allow it 
+to run within a java-enabled browser.
+-procedure to write a applet program.
+  1) you import classes or packages.
+  import java.applet.Applet;
+  import java.awt.Graphics;
+-A class can easily refer to classes in other packages.
+-Packages are used to group classes.
+-similar to the way libraries group c functions.
+-Every applet must define a subclass of he applet class.
+-Applet inherit a great deal of functionality from the applet class, ranging  from he  sbility
+ the ability to communicate with the borwser to the ability to present a 
+Graphical user Interface(GUI).
+-Applet implements just one method: paint: every applet must implement at least one of the following methods:
+ init, start, or paint.
+-Ulike the java applivation, java applet do not need to implement a main method.
+-Applet are designed to be included  in HTML page.
+-Using the <APPLET> HTML tag, you specify(at a minimum) the location of the applet subclass and the dimension of the applet's on screen display area.
+-When a java-enabled browser  encounters an <applet> tag, it reserver on screen space for the applet,
+ loads the applet subclass onto the computer on which  it is executing and creates an instance odf the applet subclass
+
+Importing classes and packages
+----------------------------------
+-The java.applet. and java.awt prefixes tell the compiler which packages it should search for the applet and Graphic class.
+-the Java.applet packages contains classes that are essential to java applet.
+-The java.awt package contains classes used by all java program with a GUI
+-The java.awt package contain classes used by all java programs with a GUI
+-To import  entire package: 
+           import java.applet.*;
+           import java.awt.*;
+-In the java language, every class is in a package.
+-If the source code for a class doesn't have a package statement at the 
+ top declaring in which package the class is, then the class is in the default package.
+ -Without a package, all classes can refer to each other without prefixes ie
+  java.awt component  class refers to the java.awt graphics class without  any prefixes  and without importing the graphics class.
+  
+  
+  Defining an applet subclass
+  ---------------------------------
+  import java.applet.APPLET;
+  import java.awt.Graphics;
+  public class Amlearning extend Applet{
+   public void paint(Graphics g){
+     g.drawString("Learning java is cool!" , 100, 40);
+     }
+  }
+ -The extends keyword indicates that Amlearning is a subclass of the class whose name follows: Applet.
+ -From Applet class, applet inherit a great deals of functionality. Perhaps most important is the ability to respond to browser request.
+ 
+ 
+ Implementing Applet Methods
+ ---------------------------------
+ -Every applet implements one or more of the init, start, and paint methods.
+ -the graphics object passesed into the paint method represents the  applet's  on-screen drawing on-screen
+ -the applet draws the string "learning java is cool" starting at location (100, 40)
+ -<APPLET CODE = "SimpleInterest.class" WIDTH= 120 HEIGHT=30>
+ -The applet tag species that the browser should load the class whose compiled code(bytecode) is in the file named SimpleInterest.class.
+ -If you include an applet twice in one HTML page, the browser loads the class file once and creates two instance of the class.
+ -the width and height attributes are like the attributes of the same name in an <IMG> tag:
+ -They specifies the size in pixels of he applet's display area.
+ 
+ Object oriented programming concepts
+ ---------------------------------------
+ -real world object shar two characteristics: they have state and behavior.
+ -For example dog  have state(name, color, breed, condition of being angry) and have behavior(barking, fetching , slobbering)
+ -A software objects mains its state in variables and implements its behavior with methods.
+ -An object is a software bundled of variables and related methods.
+ -Everything that the ssoftware object knows (its state) and can do (its behavior) is expressed by the variable and method within that object.
+ -object interact with anothe object through the public interface.
+ -object can change its private information without affecting another objects as 
+   long as the syntax and semantics  of the object's public interface remains the same.
+ -Java objects can specify exact which other object have access based on inheritance and ,package relationship.
+ -hiding information within an object's nucleus and then providing  a  public interface for interaction with it is called encapsulations.
+ 
+ 
+ Benefits of objects
+ -------------------
+ -encapsulating related variables and methods into  a neat software bundle is a simple yet powerful idea that provides  two major 
+ benefits to software developer.
+ -Modularity - the source code for an object can be written and maintained independently from the source code for other objects.
+ -An object can be easily passed around in the system.
+ -information hiding -  an object has a public interface that other objects can use to communicate with it.
+  However, the object can maintain private information and methods that can be changed at any time  without affecting the other objects that depend on it.
+  
+  
+  
+  What is message
+  ----------------------
+-A single object alone is generally not very useful and usually appear as a commponent of a large  program or application contains many other objects.
+-Through the interaction of this objects , programmers achieve  higher-order functionality and more complex behavior.
+-software objects interact and communicate with each other by sending messages to each other.
+-information is passed  along with the message  as a parameter to a method.
+-Three components that comprise a message.
+  1)The object to whom the message is addressed(bicycle)
+  2)the name of the method to perform (Change Gears)
+  3)Any parameter needed(lowegear)
+  
+  Benefit of messages
+  ---------------------
+-
