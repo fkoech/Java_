@@ -250,4 +250,266 @@ Importing classes and packages
   
   Benefit of messages
   ---------------------
--
+-An object behavior is expressesd through its methods, so aside from direct variable access, message passing support all
+possible interactions between objects.
+-Objects dont need to be in the same process or even on the same machine to send and receive messages back and forth to each other.
+
+
+
+
+What is a class
+---------------------
+-Using the object-oriented terminology, we say that your bicycle is an instance of the class of objects known as bicycles.
+-Bicycle have in common some state(eg the current gear, cureen cadence and two wheels) and behavior( they change gears and brakes)
+-In object-oriented some objects of the same kind sharing the same characteristics.
+-Examples are the:
+                rectangle;
+                employee records
+                video clips
+-You can take advantage of the fact that objects of the same kind are similar,  and you can create a blueprint for those objects.
+-Software blueprints for objects are called classes.
+-A class is a blueprint or prototype that defines the variable and methods common to all objects of a certain kind.
+-A classs can define not only the instance variable and instantance methods, but also the class variable and class method.
+-You can  access class variable and methods from an instance of the class or direct from a class.
+-You dont have to instanciate  a class variable and methods.
+-A class mehod can operate only on class variable. They cannot access instance variable or instance methods.
+-The system creates a single copy of all class variable for a class the first time it encounters the class in a program.
+-All instance of that class share its class variable.
+
+
+
+Objects versus Classes
+---------------------------
+-Software objects are abstract concept.
+-objects have values while classes does not.
+
+Benefits of classes
+----------------------
+-objects provides the benefit of modularity and information hiding.
+-Classes provide the benefits  of reusability.
+-Software programmers use the same class, and thus the same code, over and over again to create many objects.
+
+
+What is inheritance
+--------------------------
+-objects are defined in terms of  classes.
+-In object-oriented terminology, mountain bikes, racing bikes and tendems are all the subclasses of the bicycle class, while the bicycle class is the superclass 
+ of mountain bikes, racing bike, tandem.
+ -Each subclass inherits state(in the form of variable declarations) from the superclass.
+ -mountain bike tendem and racing bike share the  same state.
+ -They also inherit the method from the superclass.
+ -Subclass are not limited to the state and behavior provided to them  by their superclass. They can add other variables and methods.
+ -subclasses can also override inherited methods and provide specialized implementations for those methods.
+ -One is not limited  to just one layer inheritance. The inheritance tree or class hierarchy, can be as deep  as needed.
+ -Methods and variables are inherited down through the levels.
+ -In general, the further down in the hierarchy a class appears, the more specialized its behavior.
+ 
+ Benefits of inheritance
+ ------------------------------
+ -Subclass provide specialized behavior from  the basis of  common elecments provided by the superclass.
+ -Using inheritance, programmer can reuse the codes in the superclass many times.
+ -programmer can implement superclass called abstract class.
+ -the abstact class defines generic behavior.
+ -The abstract superclass defines and may partially implement the behavior but much of the class is underfined and unimplemented.
+ -Other programmers fill in the details with specialized subclasses.
+ 
+ 
+ Nuts and bolts of the java language
+ -------------------------------------
+ import java.io.*;
+ public class Count{
+  public static void countChars(Reader in) throws IOException
+   {
+   int count = 0;
+   while(in.read() != -1)
+      count ++;
+   System.out.print("counted" + count + "characters");
+   }
+  //main method
+  public  static void main(String[] args) throw Exception
+  {
+  if (args.length >=1 )
+    countChars(new FileReader(args[0]));
+  else
+     System.out.println("usage: count filename");
+    }
+ }
+-Above lines of code describe the traditional java language features, ie variables, data type, operators, expressions, control flow statements.
+
+
+Variables and data types
+------------------------------
+-Variables are entities (values and data) that act or are acted upon.
+-the countChars methods defines two variables count and in.
+-the program increments count each time it reads a character from the other variable in.
+-Variable declaration always contains two components: the type  of the variable an its name.
+-Where the declaration appears in relation to other code element, determine its scope.
+
+
+Data types
+------------
+-All variable in java must have data type.
+-Data type deptermines the values that the variable can contain and operation that can be performed on it.
+-Declaring int count declares that count is an integer(int). Interger can only contains only whole number values(both positive and negative) and one can use
+standard arithment operations such as +, - , / on interger to perform the standard arithmentic operation(addition, subtraction, multiplication, and division).
+-The are two categories of data types in the java language
+            primitive
+            reference
+            
+            
+primitive data types
+---------------------------
+-integers 
+       -byte
+       -short
+       -int
+       -long
+-Real numbers
+        -float
+        double
+-char
+-boolean
+
+-A variable of primitive type contains a single values of the  appropriate size and format for its type:
+                characters
+                numbers
+                boolean
+                
+                
+                
+                
+Reference types
+-------------------
+-They include:
+         Arrays.
+         classes.
+         interfaces.
+-A reference to the actual value or set of values represented by the variable.
+-They are like your friends  address. The address is not you friend but the way to reach your friend.
+-A reference type variable is not the array or objects itself but rather a way to reach  it.
+-The countChars method uses one variable of reference type in, which is a reader object.
+-When used in a statement or expression, the name in evaluates to a reference to the object.
+-So you can use the object's name to  access its member variables or call its methods.(just as countChars does to call read).
+
+
+-N/B - data type supported by c and C++ that are not supported by the java language
+         pointers
+         structures
+         unions
+     -in java  you use classes and interfaces instead.
+-Objects and arrays are reference  data types. Variable of this type  evaluate to a reference.
+-Reference is similar to pointers used in other languages such asc and C++.
+-Java does not have explicit type, you cannot construct a reference to anonymous memory.
+-This makes programming easier, well as prevents common error due to pointer mismanagement.
+-java language doess not support either structure nor union.
+-instead it uses classes or interfaces.
+-Classes and interfaces allow you to bundle together  data and method and to control who has access to those classes members.
+-this makes them much powerful that structured and union.
+
+
+Variable name
+--------------------
+-A program refer to a variable value by its name.
+-CountChars method wants to refer to the value of the count variable, it simply use the name count.
+-the following must hold  true for java variable.
+     -It must be a legal java identier comprised of a series of unicode characters.
+      unicode is a character-coding system designed to support text written in diverse human languages.
+      -It must not be a keyword or boolean literal.
+      -It must not have the same name as another variable whose declaration appear in the same scope.
+-By convention variable names begin with a lowercase letter and class names begin  with an uppercase letter.
+-If vaiable name consist of more than one word, such as isVisible, the words are joined together and each word after the first begin with an uppercase letter.
+n/b Variable may have the same name as another variable whose declaration appear in a different scope.
+
+
+
+Scope
+------------
+-A variable's scope  is the 
+
+                
+                
+                
+                
+                
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
