@@ -8,7 +8,7 @@ java is a high level language with the following characterist:
        Secure
        Architecture-neutral
        portable
-       high performince
+       high performance
        multithreaded
        Dynamic
        
@@ -424,7 +424,33 @@ n/b Variable may have the same name as another variable whose declaration appear
 
 Scope
 ------------
--A variable's scope  is the 
+-A variable's scope  is the block of code within the variable is accessible and determines when the variable is created and destroyed.
+-The location of the variable declaration within you program establish its scope and places it into one of the following  four caterogiries:
+                       member variable
+                       Local variable
+                       Method parameter
+                       Exception-handler parameter.
+                       
+-A member variable - is a member of a class or object.
+                   - It can be declared anywhere in a class but not in a method.
+                   -the member is available to all code in the member variable.
+-Local variable - can be declared anywhere in a method or within a block of code in a method.
+                -In countChars, count is a local variable.
+                -the scope of count, that is, the code  that can access count, extends from the declaration of count to the end of the countChars method.
+                -Local variable is accessible from its declaration to the end of the code block in which it was declared.
+-Method parameter - formal arguments to methods and are used to pass valuess into the method.
+                  -passes values into  methods through parameter. You can also pass values into constructor in the same manner.
+                  -In countChar, in is a parameter  to the countChars method.
+                  -the scope of a method parameter is the entire method for which it is a parameter.
+                  -In countChars, the scope of in is the entire countChars method.
+-Exception-handler parameter - are similar to method parameter but are argument to an exception handler rather than to a method or a constructor.
+                             - the countChars  method does not have any exception handlers, so it doesn't have any exception-handler parameter.
+                             
+                             
+                             Variabls initializations
+                             -------------------------
+-
+
 
                 
                 
