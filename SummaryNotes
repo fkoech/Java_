@@ -21,7 +21,7 @@ N/b compilation occurs once while interpretation occur each time the program is 
 -Java platform has two components, and this are :
      -JM(The java virtual machine)
      -Java API (the java application programming interface.
--Java API is a large collection fo ready-made software components that provides useful capabilities such as:
+-Java API is a large collection for ready-made software components that provides useful capabilities such as:
        Graphical user interface(GUI) widgets
 -Java API is grouped into  libraries(packages) of related components.
 -Java is platform independent
@@ -121,7 +121,7 @@ N/b compilation occurs once while interpretation occur each time the program is 
        Applet
        ------
        -It facilitates the java program to be included in HTML pages and executed in java enabled browser.
-       -To compile and run applet, you vsn use tools from the JDK
+       -To compile and run applet, you can use tools from the JDK
        -JDK compiler allows you to compile any kind of java program.
        -JDK applet viewer lets you run java applet.
        
@@ -139,14 +139,14 @@ N/b compilation occurs once while interpretation occur each time the program is 
            
            Creating an HTML File that includes the Applet
            ----------------------------------------------------
-    -Create a filename.html in the same director of otherfilename.class.
+    -Create a filename.html in the same director of yourfilename.class.
     -HTML file should contains:
         <html>
         <head>
         <title>title name</title>
         </head>
         <body>
-        <Applet Code="filename.class" Width 140px height=20>
+        <Applet Code="yourfilename.class" Width 140px height=20>
         </Applet>
         </body>
         </html>
@@ -160,13 +160,13 @@ to run within a java-enabled browser.
 -A class can easily refer to classes in other packages.
 -Packages are used to group classes.
 -similar to the way libraries group c functions.
--Every applet must define a subclass of he applet class.
--Applet inherit a great deal of functionality from the applet class, ranging  from he  sbility
- the ability to communicate with the borwser to the ability to present a 
+-Every applet must define a subclass of the applet class.
+-Applet inherit a great deal of functionality from the applet class, ranging  from the  ability
+ to communicate with the borwser to the ability to present a 
 Graphical user Interface(GUI).
 -Applet implements just one method: paint: every applet must implement at least one of the following methods:
  init, start, or paint.
--Ulike the java applivation, java applet do not need to implement a main method.
+-Unlike the java applivation, java applet do not need to implement a main method.
 -Applet are designed to be included  in HTML page.
 -Using the <APPLET> HTML tag, you specify(at a minimum) the location of the applet subclass and the dimension of the applet's on screen display area.
 -When a java-enabled browser  encounters an <applet> tag, it reserver on screen space for the applet,
@@ -210,16 +210,16 @@ Importing classes and packages
  -The applet tag species that the browser should load the class whose compiled code(bytecode) is in the file named SimpleInterest.class.
  -If you include an applet twice in one HTML page, the browser loads the class file once and creates two instance of the class.
  -the width and height attributes are like the attributes of the same name in an <IMG> tag:
- -They specifies the size in pixels of he applet's display area.
+ -They specifies the size in pixels of the applet's display area.
  
  Object oriented programming concepts
  ---------------------------------------
- -real world object shar two characteristics: they have state and behavior.
+ -real world object share two characteristics: they have state and behavior.
  -For example dog  have state(name, color, breed, condition of being angry) and have behavior(barking, fetching , slobbering)
  -A software objects mains its state in variables and implements its behavior with methods.
  -An object is a software bundled of variables and related methods.
- -Everything that the ssoftware object knows (its state) and can do (its behavior) is expressed by the variable and method within that object.
- -object interact with anothe object through the public interface.
+ -Everything that the software object knows (its state) and can do (its behavior) is expressed by the variable and method within that object.
+ -object interact with another object through the public interface.
  -object can change its private information without affecting another objects as 
    long as the syntax and semantics  of the object's public interface remains the same.
  -Java objects can specify exact which other object have access based on inheritance and ,package relationship.
@@ -250,7 +250,7 @@ Importing classes and packages
   
   Benefit of messages
   ---------------------
--An object behavior is expressesd through its methods, so aside from direct variable access, message passing support all
+-An object behavior is expressed through its methods, so aside from direct variable access, message passing support all
 possible interactions between objects.
 -Objects dont need to be in the same process or even on the same machine to send and receive messages back and forth to each other.
 
@@ -306,7 +306,7 @@ What is inheritance
  
  Benefits of inheritance
  ------------------------------
- -Subclass provide specialized behavior from  the basis of  common elecments provided by the superclass.
+ -Subclass provide specialized behavior from  the basis of  common elements provided by the superclass.
  -Using inheritance, programmer can reuse the codes in the superclass many times.
  -programmer can implement superclass called abstract class.
  -the abstact class defines generic behavior.
@@ -342,14 +342,14 @@ Variables and data types
 -Variables are entities (values and data) that act or are acted upon.
 -the countChars methods defines two variables count and in.
 -the program increments count each time it reads a character from the other variable in.
--Variable declaration always contains two components: the type  of the variable an its name.
+-Variable declaration always contains two components: the type  of the variable and its name.
 -Where the declaration appears in relation to other code element, determine its scope.
 
 
 Data types
 ------------
 -All variable in java must have data type.
--Data type deptermines the values that the variable can contain and operation that can be performed on it.
+-Data type determines the values that the variable can contain and operation that can be performed on it.
 -Declaring int count declares that count is an integer(int). Interger can only contains only whole number values(both positive and negative) and one can use
 standard arithment operations such as +, - , / on interger to perform the standard arithmentic operation(addition, subtraction, multiplication, and division).
 -The are two categories of data types in the java language
@@ -398,10 +398,10 @@ Reference types
          unions
      -in java  you use classes and interfaces instead.
 -Objects and arrays are reference  data types. Variable of this type  evaluate to a reference.
--Reference is similar to pointers used in other languages such asc and C++.
+-Reference is similar to pointers used in other languages such as and C++.
 -Java does not have explicit type, you cannot construct a reference to anonymous memory.
 -This makes programming easier, well as prevents common error due to pointer mismanagement.
--java language doess not support either structure nor union.
+-java language does not support either structure nor union.
 -instead it uses classes or interfaces.
 -Classes and interfaces allow you to bundle together  data and method and to control who has access to those classes members.
 -this makes them much powerful that structured and union.
@@ -438,7 +438,7 @@ Scope
                 -In countChars, count is a local variable.
                 -the scope of count, that is, the code  that can access count, extends from the declaration of count to the end of the countChars method.
                 -Local variable is accessible from its declaration to the end of the code block in which it was declared.
--Method parameter - formal arguments to methods and are used to pass valuess into the method.
+-Method parameter - formal arguments to methods and are used to pass values into the method.
                   -passes values into  methods through parameter. You can also pass values into constructor in the same manner.
                   -In countChar, in is a parameter  to the countChars method.
                   -the scope of a method parameter is the entire method for which it is a parameter.
@@ -449,8 +449,54 @@ Scope
                              
                              Variabls initializations
                              -------------------------
--
+-Local variable and member variable can be initialized with an assigment statement when they are declared.
+-The data type of both sides of the assignment statement must match.
+-The countChars method provides an initial value of zero for count when declaring it.
+-Method parameter and exception-handler parameter cannot be initialized in this way;
+ the value for a parameter is set by the caller.
+ 
+ Final variables
+ --------------------
+ -You can declare any variable in any scope to be final, including parameter to method and constructors.
+ -The value of a final variable cannot change after it had been initialized.
+ -To declare final variable, use the final keyword in the variable declaration before the type
+     final int number=0;
+ -Above statement declares a final variable and initialize it, all at once.
+ -subsequent attempt to assign a value to Number results in a compiler error.
+ -You can define and initialize it later.
+ -A final variable that has been declared but not yet initialized is called a blank final
 
+
+Operators
+------------
+-The countChars methods uses several operators; =, !=, ++ 
+-operators performs function to one or three operands.
+-Operators that require one operand are called unary operator.
+-For example, ++ is a unary operator that increment the value of its operand by 1.
+-operators that require two operands are binary operators. For example = . it asigns  the value from its right-hand operand to its left-hand operand.
+-Tertiary operators are those that require three  operands .
+-Java has one tertiary operand "?: " which is a short-hand of if else statement.
+-Uninary  operator can use either prefix or postfix notation.
+-Prefix notation means that the operator  appear before its operand.
+      operator op
+-Postfix notation means that the operator appear after the operator.
+     op operator
+-All java's binary operator use infix notation, which means that the operator appear between its operands.
+    op1 operator op2
+-Also, the tertiary is infix , each component of the operator appears between its operands.
+   expr ? op1 : op2
+-In addition to performing the operation, an operator also return a value.
+-The value and its type depends on the operator and the type of its operands.
+-Java operators are caterogied into: 
+              arithimetic
+              relational and conditional 
+              bitwise and logical 
+              Assignement
+              
+Arithmentics
+--------------
+-Java support verious  arithmentics operators for all floating-point and integer numbers.
+-this include: addition(+), subtraction(-), multiplication(*), division(/) and modulo()
 
                 
                 
