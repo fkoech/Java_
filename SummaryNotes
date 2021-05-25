@@ -564,6 +564,78 @@ Bitwise and logical operator
             op1 | op2 (perform the bitwise or)
             op1 xor op2(perform the bitwise xor)
            bitwise complement op (perform the bitwise complement).
+-the three shift operators simply shift the bits of the  left-hand operand over by  the number of position indicated by the 
+ right-hand operand.
+ -The shift occcurs in the direction indicated by the operator itself.
+ -For example:
+         The following statement shifts the bits of the integer 13 to the right by one position
+              13 >> 1;
+-The binary representation of the number 13 is 1101.
+-The result of the  shift operation is 1101 shift to the right by one  position 110 or six in decimal notation.
+-The bit farthest to the right falls off the end into the bit bucket.
+-The | operator perform the inclusive or operation.
+-inclusive or means that if either of the 2 bits are 1, then the result is 1.
+-Exclusive or means that if the two operands bits ae different, the result is 1, otherwise the result is 0.
+-the complement operator,  inverts the value of each bit of the operand. if the operand bit is 1, the result is 0 and if the
+ operand bit is 0, the result is 1.
+ -bitwise manipulations are useful for managing sets of boolean flags.
+ -On having several boolean flags in your program  that indicate the state of various components in your program - is it visible, is it draggable and so on.
+ -Rather than defining seperate boolean variable to hold each flag, you can define a single variable, flags for all of them.
+ -Each bit within flags represents the current state of one of the flags.
+ -You can then use bit manipulation to set and get each flag.
+ -First set thw constant that indicate the various flags for your program.
+ -Each flags should each be a different power of  2 to ensure that the 'on' bit doesn't overlap with another flag.
+ -then define a variable flag, whose bits are set according to the current state of each flag.
+ -The following code sample initializes flags to 0, thereby indicating that all flags are false(that is no bit are set).
+     final int VISIBLE = 1;
+     final int DRAGGABLE = 2;
+     final int SELECTABLE = 4;
+     final int EDITABLE = 8;
+     
+ -To set the visible flag when something became visible, use this statement:
+       flags = flags | VISIBLE;
+ -To test for visibility, you then write:
+        if (flags & VISIBLE)
+         ...
+        
+        
+        
+        ASSIGNMENT OPERATORS
+        ---------------------
+ -Basically, it is used to assign on value to another (=).
+ -countChars method uses = to initialixe count with this statement:
+            int count = 0;
+ -Java also provides several shortcuts assignment operators that allow you to perform an arithmentic, logical, or bitwise and assignment operation. 
+ -Suppose you want to add a number to a variable and assign the result back into the variable ie 
+       i = i + 2;
+ -You can shorten this using the shortcut operator;
+      i += 2;
+      op1 += op2 ( op1 = op1 + op2)
+      op1 *= op2 (op1 = op1 * op2)
+ 
+ 
+ 
+ EXPRESSIONs 
+ --------------------
+-Expression perform the work of java.
+-Used to compute and assign values to variables and to help control the execution flow of a program.
+-the job of an expression is twofold: perform the computation indicated  by the element of the expression and return some value that  is the result of the computation.
+-Expression is series of variable, operators, and methods calls(constructed according to the syntax of the language) that evaluate to a single value.
+-Expression in countChars:
+           in.read() != 1
+-It consist of two expression, 
+         the first expression is a method call.
+                       in.read()
+-A method call expression evaluates to the return value of the method.
+-Therefore the datatype  of a method call expression is the same as the data type of its return value.
+-The  in.read method is declared to return an interger , so the expression in.read() evaluate to an integer.
+-the != compares two operands for inequality.
+-in.read() != -1 compares two inegers: the value returned by in.read() and -1.
+-The value returned by != is either true or false depending on the outcome of the comparison.
+
+                       
+      
+  
            
 
 
