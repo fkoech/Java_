@@ -496,7 +496,16 @@ Operators
 Arithmentics
 --------------
 -Java support verious  arithmentics operators for all floating-point and integer numbers.
--this include: addition(+), subtraction(-), multiplication(*), division(/) and modulo()
+-this include: addition(+), subtraction(-), multiplication(*), division(/) and modulo().
+-The java language extends the definition of the +  operator to include string concatenation.
+-The countChar method uses + to cancatenate 'counted', the value of count and 'char'.
+      System.out.println("count" + count + "char.")
+-This operator automatically coerces the value to a string.
+-There also two arithmetic operation ++, which increments its operand by 1 and --, which decrement its operand  by 1.
+-the countChars method uses ++ to increment the count variable each time it reads a character from the input source with this statement.
+-In the countChars method, suppose that the count is 3 before the following statement is executed:
+                 count++;
+-After the statement is executed, the value of the count is 4. No surprises there. However, the statement count++ evaluate to 4.
 
                 
                 
