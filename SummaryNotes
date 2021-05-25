@@ -505,7 +505,67 @@ Arithmentics
 -the countChars method uses ++ to increment the count variable each time it reads a character from the input source with this statement.
 -In the countChars method, suppose that the count is 3 before the following statement is executed:
                  count++;
--After the statement is executed, the value of the count is 4. No surprises there. However, the statement count++ evaluate to 4.
+-After the statement is executed, the value of the count is 4. No surprises there. However, the statement count++ evaluate to 3.
+-The prefix version of ++ would also set count to 4. however, the statement ++ count does not evaluate to 3 like the postfix version ++ does.
+-The both statements are useful when the value of the statement is used in the middle of a more complex computation, for flow control, or for something else.
+                      do {
+                       } while(count ++ < 4);
+                       
+- op++ increments op by 1; evaluate to value before incrementing.
+-++op increment op by 1; evaluate to value after incrementing.
+
+                       
+      Relational and conditional operators
+      ----------------------------------------
+-A relational operator compares two values and determine the relationship between them.
+-!= returns true if the two operands are unequal.
+-The countChar method uses != to determine whether the value returned by in.read is not equal to -1.
+-op1 > op2( op1 is greater than op2).
+-op1 >= op2 (op1 is greater than or equal to op2).
+-op1 < op2( op1 is less than to op2).
+-op1 <= op2(op1 is less than or equal to op2).
+-op1 == op2 (op1 is equal to op2).
+-op1 != op2 ( op1 and op1 are not equal)
+-op1 instanceof op2 (op1 and op2 are assignment compatible).
+-Relational operators  often are used with the conditional operators to construct more complex decision-making expression.
+-one such operator is &&, which performs the boolean and operation.
+-You can use two different relational operator along with && to determine if both relationships are true.
+-Determining if an array index is between two boundaries. Also determine if the index is both greater than 0 or less than 
+ NUM_ENTRIES(Which is a previously defined constant value)
+     0<index< && index < NUM_ENTRIES.
+-In some instance, the second operand to a conditional operator may not be evaluated.
+     ((count > NUM_ENTRIES) && (in.read() != -1))
+-If count is less than NUM_ENTRIES, the left-hand operand for && evaluates to false.
+-the && operator returns true only if both operands are true.
+-So in this situation, the returned value of && can be determined without evaluating the right -hand operand.
+-In such a case, java does not evaluate the right-hand operand.
+-Thus  in.read won't get to called  and a character will not be read from the stream.
+-The operator & is similar to && if both of its operands are of boolean type.
+   
+   binary conditional operators
+   -------------------------------
+-op1 && op2(op1 and op2 are both true, condition evaluate op2.
+-op1 || op2 (either op1 and op2 is true: conditionally evaluates op2)
+-! op (op is false)
+-op1 & op2(op1 and op2 are both true: always evaluates op1 and op2.
+-op1 | op2(either op1 or op2 is true: always evaluate op1 and op2)
+-Java sopport tertiary operator and is basically shorthand for an if-else statement.
+             expression ? op1 : op2
+-The ?: operator evaluates expression and return op1 if it's true and op2 if its false.
+
+
+Bitwise and logical operator
+-----------------------------
+-A bitwise operator allows you to perform bit manipulation on data.
+            op1 >> op2 (shifts bits of op1 right by distance op2)
+            op1 << op2 (shift bits of op1 left by distance op2)
+            op1 >>> op2 (shifts bits of op1 right by distance op2 (unsigned).
+            op1 & op2 (perform the bitwise and)
+            op1 | op2 (perform the bitwise or)
+            op1 xor op2(perform the bitwise xor)
+           bitwise complement op (perform the bitwise complement).
+           
+
 
                 
                 
