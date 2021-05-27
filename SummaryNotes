@@ -721,7 +721,55 @@ Bitwise and logical operator
  
  The Switch statement
  -----------------------
- -
+ -A switch statement lets you conditionally perform statement based on some value.
+ -Suppose your program contains an integer named months whose value indicates the months in  some date.
+ -Suppose also that you want do display  the name of the month based on its integer equivant.
+          int month;
+          switch(month){
+               case 1: System.out.println("January"); break;
+               case 2: System.out.println("February");break;
+               case 2: System.out.println("March");break;
+               case 4:System.out.println("April");break;
+               case : System.out.println("MAy");break;
+               case: System.out.println("June");break;
+               case 7: system.out.println("July");break;
+               case 8: System.out.println("August");break;
+               case 9: System.out.println("Sep");break;
+               case 10:System.out.println("october");break;
+               case 11:System.out.println("November");break;
+               case 12: System.out.println("December");break;
+               }
+  -Switch statement uses a values, for this case the values  of month, to choose the appropriate case statement to execute.
+  -You can also implement this on using the if statement.
+      int mont;
+      if (month==1){
+         System.out.println("January");
+     }else if(month == 2){
+         system.out.println("February");
+     }
+     // like that to december.
+ -Each case  statement must be unique, and the value provided to each must be of the same data
+  type as the data type returnd by the expression provided to the swich
+ statement.
+ -The break statement cause control to break out of the switch  and continue with the first
+  statement following the switch statement.
+ -They are necesary because case statement fall through; that is, without an explicit break statement,
+  control will flow sequentially through subsequence case statement.
+ -The cetain scenarios in which you do want control to proceed sequentially through case statements.
+ -however in other case you do wanr control  to proceed sequentially through case statement.
+               int month;
+               int numberDays;
+               switch(month){
+                  case 1:
+                  case 3;
+                  case 5;
+                  case 7;
+                  case 8;
+                  case 10;
+                  case 12;
+                  numberDays = 31;
+                  break;
+                  case
   
       
   
