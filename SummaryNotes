@@ -479,7 +479,7 @@ Operators
 -Uninary  operator can use either prefix or postfix notation.
 -Prefix notation means that the operator  appear before its operand.
       operator op
--Postfix notation means that the operator appear after the operator.
+-Postfix notation means that the operator appear after the operand.
      op operator
 -All java's binary operator use infix notation, which means that the operator appear between its operands.
     op1 operator op2
@@ -532,7 +532,7 @@ Arithmentics
 -You can use two different relational operator along with && to determine if both relationships are true.
 -Determining if an array index is between two boundaries. Also determine if the index is both greater than 0 or less than 
  NUM_ENTRIES(Which is a previously defined constant value)
-     0<index< && index < NUM_ENTRIES.
+     0<index && index < NUM_ENTRIES.
 -In some instance, the second operand to a conditional operator may not be evaluated.
      ((count > NUM_ENTRIES) && (in.read() != -1))
 -If count is less than NUM_ENTRIES, the left-hand operand for && evaluates to false.
@@ -575,7 +575,7 @@ Bitwise and logical operator
 -The bit farthest to the right falls off the end into the bit bucket.
 -The | operator perform the inclusive or operation.
 -inclusive or means that if either of the 2 bits are 1, then the result is 1.
--Exclusive or means that if the two operands bits ae different, the result is 1, otherwise the result is 0.
+-Exclusive or means that if the two operands bits are different, the result is 1, otherwise the result is 0.
 -the complement operator,  inverts the value of each bit of the operand. if the operand bit is 1, the result is 0 and if the
  operand bit is 0, the result is 1.
  -bitwise manipulations are useful for managing sets of boolean flags.
@@ -583,7 +583,7 @@ Bitwise and logical operator
  -Rather than defining seperate boolean variable to hold each flag, you can define a single variable, flags for all of them.
  -Each bit within flags represents the current state of one of the flags.
  -You can then use bit manipulation to set and get each flag.
- -First set thw constant that indicate the various flags for your program.
+ -First set the constant that indicate the various flags for your program.
  -Each flags should each be a different power of  2 to ensure that the 'on' bit doesn't overlap with another flag.
  -then define a variable flag, whose bits are set according to the current state of each flag.
  -The following code sample initializes flags to 0, thereby indicating that all flags are false(that is no bit are set).
@@ -632,8 +632,97 @@ Bitwise and logical operator
 -the != compares two operands for inequality.
 -in.read() != -1 compares two inegers: the value returned by in.read() and -1.
 -The value returned by != is either true or false depending on the outcome of the comparison.
+-Java allows you to construct compound expression and statemnts from various smaller  expression as long as the data types required by both parths of the expression
+ match.
+ -you can direct the java compiler to evaluate an expression in a specified order by using balanced parentheses().
+ -Operators with a higher precedence get evaluated first.
+ 
+ 
+ Control flow statement
+ --------------------------
+ -The countChars methods uses a while statement to loop through  all of the characters of the input source and count them.
+             import java.io.*;
+             public class Count{
+              public static void CountChars(Read in) throws IOException
+             {
+             int count = 0;
+             while (in.read() != -1)
+                  count++;
+             System.out.println("count" + count + "chars.");
+             }
+             // main method
+             }
+            }//close the class
+-A while statement perform some actions while a certain condition remain true.
+-General syntax of while statement.
+         while(expression)
+              statement
+-That is, while expression is true., do statement. in countChars, while the read method return a value that is not -1, the program increment count.
+-Statement can be one statement,  or it can be statement block.
+-A statement block is a series of legal java statement containined within the curly brackets.
+         while(in.read() != -1){
+           count++;
+           System.out.printLn("Read a character.count = " + count);
+           }
+-prints the count each time a character is read.
+-though goto is a reserved word, currently java does not support goto statement. Use branching statement instead.
+-Statement such as the while statement is a control flow statement, that is it determine the order in which other statement are excuted.
 
-                       
+
+  control flow statements
+  -------------------------
+  Type of statement            keyword
+  -------------------         ---------------
+  -Decision-making           -if-else, switch-case
+  -loops                     -for, while, do-while
+  -Exception                 - try-catch-finally, throw
+  -Branching                 - break, continue, label:, return
+  
+  
+  -The if-else statement
+  -------------------------
+  -Enable your program to selectively execute other statement based on some criteria.
+  -For example, if your program print debugging information based on the value of some boolean variable named DEBUG.
+  -If the DEBUG is set to true, then your program prints debugging information such as the value of a variable x. otherwise, your program proceed normally, 
+           if (DEBUG)
+           System.out.printLn("DEBUG: x= " +x);
+  -Above execute if some condition is true.
+  -General syntax of if statement,
+             if(expression)
+                statement
+  -suppose you want to excute a different set of statement if  expression is false, you can use the else statement for that.
+  -suppose you program need to perform different actions depending on whether the user click  OK or CANCEL in an alert window.
+  -You program could do this using an if statement and an else statement.
+         if (response == OK){
+           //code to perform ok action
+         }else{
+         //code to perform cancel action
+  -This particular use of the else statement is the catch -all form.
+  -the else block is executed  if the if part is false.
+  -Another form of the else statement, else if, execute a statement based on another expression.
+  -A prgram that assigns grades based on the value of a test score.
+  -A for a score of 90 and above, B for a score above 80 and so on.
+               int testScore;
+               Char grade;
+               if(testScore >= 90 && testSCore < 100){
+                 grade = 'A';
+               }else if (testScore >= 80 && testSCore < 90){
+               grade = 'B';
+               }else if (testScore >= 70 && testSCore < 80){
+               grade = 'C';
+               }else if(testScore >= 40 && testSCore < 70{
+               grade = 'D';
+               }
+               else{
+               System.out.println("You have to retake')
+ -An if statement can have any number of companion else if statement, but only one else.
+ 
+ 
+ 
+ The Switch statement
+ -----------------------
+ -
+  
       
   
            
