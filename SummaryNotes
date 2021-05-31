@@ -846,8 +846,71 @@ Bitwise and logical operator
 
 
                 loop statements
-                ---------------------------------
-                
+                ------------------------------
+-Other than the  while statement, java also has other loop statements, and those are:
+           for loop
+           do-while loop
+-For loop is used if you know the constraints of the loop.
+-Its initialization, insruction, termination croteria and increment  instruction.
+-Often used to iterate over the elements in an array or the characters in a string.              
+           //array of some kind
+           int length = a.length;
+           for(int i = 0; i < length; i++){
+           //do something to the  element a
+           }
+-for loop is good for writing  program that you want to start at the beginning of the array, stop at the end and hit every element.
+-The general form of the for statement;
+            for (initialuzation; termination; increment)
+                statement
+-Initialization is a statement that initializes the loop - it is executed once at the beginning of the loop.
+-Termination is an expression that determine when to terminate  the loop.
+-This expression is evaluated at the top of each iteration of the loop.
+-When the expression is evaluated to false, the for loop terminates.
+-Increment is an expression that gets invoked for each iteration through the loop.
+-Any (or all) of these components can be empty statement.
+-do-while  loops is similar to the while loop , except that the expression in evaluated at the bottom of the loop.
+      do{
+      statements
+      }
+      while (booleanEXpression);
+      
+-Do-while statement is a less common loop construct in programming.
+-Convenient when the statement within the loop must be executed at least once.
+-For example, when reading information from a file, you always have to read at least one character if only to find out if the character is the end-of-file character.
+      int c;
+      reader in;
+      do{
+      c = in.read();
+      ..
+      }while (c!=-1);
+      
+      
+      Exception-handling statement
+      --------------------------------
+-used to throw  exception indicated to its caller  that an error occured and type of  error that occured.
+-The calling method can use the, try, catch, and final statement to catch and handle the exception.
+
+
+
+    Branching statements
+    --------------------------
+-Break causes the flow of control to jump to the statement immediately following the current statement.
+-Another form of the break statement cause flow of control to break out of labeled statement.
+-Continue statement within loops to jump to another statement.
+-The continue statement has two forms: unlabeled and labeled.
+-If you use the unlabeled  form , control transfers to and reevaluates the termination condition of the loop.
+-In for and while  loop, this means that the control returns to the top of the loop, 
+-In do-while loops, this mean that control returns to the bottom of the loop.
+-The continue statement can be called from within the loop.
+-The label form of continue statement continue at the next iteration of the labeled loop.
+-Implementation of the String class's  indexOf method, which uses the label form of continue:
+          public int indexOf(String str, int formIndex){
+                 char[] = value;
+                 char[] = str.value;
+                 int max = offset + (count - str.count);
+               test:
+                  for (int i = offset + ((fromIndex < 0) ? 0 : formIndex);
+                       i <=max 
                 
                 
                 
