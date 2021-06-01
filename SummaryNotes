@@ -910,8 +910,42 @@ Bitwise and logical operator
                  int max = offset + (count - str.count);
                test:
                   for (int i = offset + ((fromIndex < 0) ? 0 : formIndex);
-                       i <=max 
-                
+                       i <=max ; i++){
+                       int n = str.count;
+                       int j = i;
+                       int k = str.offset;
+                       while (n-- !=0){
+                          if (v1[j++] != v2[k++]){
+                              count test;
+                              }
+                            }
+                            return i - offset;
+                           }
+                         return -i;
+                        }                        
+        
+ -Return statement is one of the java  branching statement.
+ -A return statement is used to  exit from the current method and proceed with  the statement that follow the original  method call.
+ -The are two forms of return. One returns something while the other return nothing.
+ -To return a value, put a value or expression that calculate the value.After the return keyword.
+   return ++count;
+ -The data type of the value returned by  return must match the type of the method's  declared.
+ -When a method is declared void, use the form of  return that does not return a value.
+     return;
+ 
+ 
+ Array and strings
+ -----------------------
+ -Java allow someone to collect and manage multiple values through an array value.
+ -You manage data comprised of multiple characters through a String objects.
+ 
+ 
+ 
+ Arrays
+ --------------
+-Count class's main method declares an array as parameter to main.
+-Before you can use an array, you first declare it.
+-Declaration of an array has two 
                 
                 
       
