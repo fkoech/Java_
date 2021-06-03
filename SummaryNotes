@@ -945,7 +945,27 @@ Bitwise and logical operator
  --------------
 -Count class's main method declares an array as parameter to main.
 -Before you can use an array, you first declare it.
--Declaration of an array has two 
+-Declaration of an array has two primary components: the array type and the array  name.
+-The array type include the data type of the elements contained within the array.
+-The array type of an array's  element  must be identified when the array is declared.
+-A declaration for an array of integer.
+    int[] arrayOfInts;
+-The int[] part of the declaration indicates that arrayOfInts is an array of integers.
+-The declaration does not  does not allocate any memory to contain the array element.
+-if Your program attempts to assign or access a value to any elements of arrayOfInts before memory of it has been allocated, the compiler prints an error message.
+-To allocate memory to an element of array, you must first instantiate the array.
+-You use the java's new operator to instantiate the arrays.
+-The steps you take to create an object is the same as the steps you take to create an class.
+-Declaration, instantiation and initializations.
+-ALocation enough memory for arrayOfInts to contain ten integers.
+         int[] arrayOfInts = new int[10];
+-In general, to create array, you use the new operator, the data type of the  array 
+ element and the number of element desired, enclosed within the square brackets.
+     elementType[] arrayName = new elementType[arraySize]
+-Now that memory has been allocate to the array, you can assign values to its element and retieve those values.
+-
+
+-
                 
                 
       
