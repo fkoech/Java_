@@ -1165,7 +1165,37 @@ Declaring an object
 -So types can be the name of a class such as the rectangle class or the name of an interface.
 -Both class and interfaces are reference types(the variable's values is a reference to the value or set of values represented by the variable).
 -Reference may also be called an object reference or array reference, depending on the data to which the reference refers.
--Declaration notify the compiler that you will use name to refer to
+-Declaration notify the compiler that you will use name to refer to a variable whose type is type.
+-Declaration do not create new objects.
+-Rectangle rect does not create a new Rectangle object, just as variable named rect to hold a Rectangle object.
+-To create a Rectangle object  or any other objectm use the new operator.
+
+
+
+Instantiating an object
+-------------------------
+-The new operator instantiates a class by allocating memory for a new object of that type.
+-New require a single, postfix argument: a call to a constructor.
+-Each java class provides a set of constructors used to initialize new objects of that type.
+-The new operator creates the objects, and the constructor initializes it.
+-Using the new constructor to create a Rectangle object.
+      new Rectangle(100,  200);
+-Rectangle(100, 200) is the argument to new.
+-The new operator returns a reference to the newly created object.
+This  reference can be assigned to a variable of the appropriate type.
+       Rectangle rect = new Rectangle(100, 200);
+-rect refers to a rectangle object whose origin is at(0,0) width is 100 and length is 200.
+
+
+Initializing an object
+----------------------------
+-A class can provide one or more constructors to initialize a new object of that type.
+-You can recognize a class constractor  because  they have the same name as the class and  have no return  type.
+-Rectangle constructors.
+       public Rectangle(point p)
+       public Rectangle(int w, int l)
+       public Rectangle(point p, int w, int l)
+
   
   
   
@@ -1248,6 +1278,21 @@ Declaring an object
  
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
