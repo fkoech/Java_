@@ -963,10 +963,201 @@ Bitwise and logical operator
  element and the number of element desired, enclosed within the square brackets.
      elementType[] arrayName = new elementType[arraySize]
 -Now that memory has been allocate to the array, you can assign values to its element and retieve those values.
--
+      for(j=0; j<arrayOfint.length; j++){
+         arrayOfInts[j]=j;
+         System.out.println("[j] = "+arrayOfInts[j]);
+       }
+       
+-To reference an array element, you append square brackets to the array name.
+-Between the square brackets indicate (either with variable or some expression ) the index of th element you want to access.
+-Array indices begins at 0 and ends at the array lenght minus 1.
+-The For loop iterates through each element of arrayOfInts, assign value to its element and printing out those values.
+-The use of arrayOfInt.length retrieves the current length of the array.
+-Length i a property provided to all java array.
+-Let as look again at the main method that calls countChars. Note the use of args array.
+       import java.io.*;
+       public class Count{
+         //the countChars method omitted
+       public static void main(String[] args) throws Exception{
+          if (args.length >=1)
+              countChars(new FileReader(args[0]));
+          else
+             System.out.println("Use: count filename");
+             
+          }
+       }
+-The java runtime allocates the space for the args, so main doesn't have to bother with it.
+-The main method ensur that there's atleast one element in the args array, and if there is, 
+  its uses the first element in the array(presumably the name of a file) to open a fileReader.
+-Java can contain any legal java data type, including reference type such as objects or other arrays.
+-Declaring and allocating memory for an array of ten String objects.
+           String[] arrayOfString = new String[10];
+-The elements in this array are reference type, that is, each element contains a reference to a string object.
+-At this point, enough memory has been allocated to contain the String references, but no memory has been allocated for the string object themselves.
+-If you attempt to access one of the arrayOfStrings elements at this point, 
+ you will get a nullPointException because the array is empty and contains no String objects.
+-Alocating actual string objects separately.
+       for(j=0; j<=arrayOfString.length; j++)
+         arrayOfString[i] = new String("String"+ i);
+         
+-You use arrays when you know in advance the required size of the array.
+-If you don't know the size of array that you need, consider using the java.util.vector class which implement a growable array.
 
--
-                
+
+Strings
+-------------
+-A sequence of characters data .
+-Implement in java platform by the string class.( a member of the java.lang package).
+-Count's ,main uses String in its declaration of the args array.
+      string[] args
+-This statement explicitly declares an array named args that contains String objects.
+-The empty brackets indicates that the length of the array is unknown at compilation time because the array is passed in at runtime.
+-The CountChars method also use two strings both in the form of a literal string(a series of characters between double quotation marks)
+       "count"
+       "chars"
+-The program implicitly allocate two string objects, one for each of the two literal string above.
+-String objects are immutable, that is they cannot change once they have been created.
+-The java.lang package provides a different class, stringBuffer which you can use to create and manipulate character on the fly.
+
+
+
+String concatenation
+--------------------------
+-Java lets you concatenate strings together using the + operator.
+-code snippets concatenates three strings together
+    "counted " + count + " chars"
+-Counted and chars are string literals.
+-count is an integer that first gets converted to a string and then concatenated to the others.
+
+
+
+Objects and classes
+---------------------
+-To understand object, you must understand classes. To understand classes, you need to understand objects.
+
+brief introduction to classes
+-------------------------------
+-Snipet code for a class called pointer that represent a pointer in 2D space.
+       public class point{
+           public int x = 0;
+           public int y = 0;
+         }
+-This segement of code declares a class- a new data type really- called point.
+-The point class contains two integer member variable x and y.
+-The public key-word preceding the declaration for x and y means that any other class can freely access these two members.
+-You create an object from class such as point by instantiating the class.
+-When you create a new point object, space is allocated   for the object and its members x and y.
+-In additon, the x and y members inside the objects are initialized to 0 because of the assignment statement in the declaration of the wo members.
+-A class rectangle that represents a rectangle in 2D space.
+       public class Rectangle{
+            public int width =0;
+            public int length =0;
+            public point origin = new Point();
+            
+          }
+-This segment of code declared a class Rectangle that contains two intergers  members width and length.
+-the rectangle also contains a third member, origin, whose data type is point.
+-{oint is used in a variable declaration as the variable's type.
+-You can use the name of a class anywhere you can use the name of the primitive type.
+-Just has width "is an" integer, length "is an" integer, origin "is  a " point.
+-A Rectangle object had a point. The distinction between is and has a is critical because only an object that is a point can be used where a point is called for.
+-As with point, when you create a new Rectangle object, space is allocated for the object and its members.
+-The Member are initialized according to their declaration.
+-The initialization for the origin member creates a point object with code new point()
+-A rectangle would provide method for  computing its area, and because  Rectangle creates a  point where  
+  it's created, the class should provide for the clean  up of the point when Rectangle gets cleaned up.
+-A new version of point that contains a constructor which you can use to initialize a new point to a value that (0, 0).
+      public class Point{
+        public int x = 0;
+        public int y = 0;
+        //constructor!
+        public Point(int x, int y){
+          this.x = x;
+          this.y = y;
+          }
+        }
+-On creating a point, you can provide initial values for its like
+     new point(33, 3)
+-The values 33 and 3 are passed into the constructor and subsequently assigned to the x and y members of the new point object.
+-A rectangle that contains four constructors, a method to move the rectangle, 
+  a method to compute the area of the rectangle, and a finalize method to provide for the clean up.
+         public class Rectangle{
+             public int width = 0;
+             public int length = 0;
+             public point origin;
+             //four constructors
+             public Rectangle(){
+                   origin = new Point(0, 0);
+                  }
+             public Rectangle(Point p){
+             origin = p;
+             }
+             public Rectangle(int w, int l){
+                this(new point(0,0), w, l);
+                }
+             public Rectangle(Point p, int w, int l){
+                origin = p;
+                width = w;
+                length = l;
+                }
+             //A method for moving the rectangle
+             public void move(int x, int y){
+                 origin.x = x;
+                 origin.y = y;
+                 }
+             //A method for computing the area of the rectangle
+             public int area{
+                return width*length;
+                }
+             //clean up!
+            protected void finalize() throws Throwable{
+              origin = null;
+              super.finalize();
+              
+-The four constructor allow for different type of initialization.
+-You can create a new rectangle and let it provide default values for everything, or you can specify initial values for the origin, the origin, the width and the height, or all the three.
+-Before the end of this section reading, i should understand;
+      -that object are created from  classes.
+      -An object's  class is  its type.
+      -The difference between reference and primitive types.
+      -How to create objects from classes.
+      -What constructors are.
+      -What the code for a class looks like
+      -What a member variable are
+      -How to initialize an object.
+      What methods looks like.
+      
+      
+      
+      
+Life cycle of an object
+-------------------------
+-Java program creates many objects from a variety of classes.
+-Objects ineract with one another by sending messages.
+-Through these, objects interaction, a java program can implement a GUI, run an animation, or send  and receive information over a network.
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+     
                 
       
       
