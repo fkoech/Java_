@@ -1133,8 +1133,39 @@ brief introduction to classes
 Life cycle of an object
 -------------------------
 -Java program creates many objects from a variety of classes.
--Objects ineract with one another by sending messages.
+-Objects interact with one another by sending messages.
 -Through these, objects interaction, a java program can implement a GUI, run an animation, or send  and receive information over a network.
+-Once an object has completed the work for which it was created, it is garbage-collected and its resource are recycled for use by other objects.
+-The following three sections, describe the typical life cylce of an object.
+   1.creation
+   2.use
+   3.Destruction
+
+Creating an object
+--------------------
+-in java, you create an object by creating an instance of a class or, in other words, instantiating a class.
+-creating a new rectangle object from the Rectangle class.
+                  Rectangle rect = new Rectangle();
+-The single statement above perform three actions;
+        Declaration - Rectangle rect is a variable declaration that declares to the compiler that the name  rect  will be used to refer to a Rectangle 
+        object.
+                    -Class name  is used as  the variable type. 
+        Instantiation - new is a java operator that create the new object(allocates  space for it).
+        Initialization  - Rectangle() is a call to Rectangle's constructor, which initialize  the object.
+
+
+Declaring an object
+---------------------------
+-The Declaration is not a necessary part of object creation, although it often appear on the same line.
+-Like other variable declaration, object declaration can also appear alone
+      Rectangle rect;
+-To declare an object, you just follow the same rules and declare a variable to refer to that object by declaring its type and name;
+          type name
+-Classes and interfaces can be used as data types.
+-So types can be the name of a class such as the rectangle class or the name of an interface.
+-Both class and interfaces are reference types(the variable's values is a reference to the value or set of values represented by the variable).
+-Reference may also be called an object reference or array reference, depending on the data to which the reference refers.
+-Declaration notify the compiler that you will use name to refer to
   
   
   
