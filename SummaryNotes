@@ -1195,6 +1195,65 @@ Initializing an object
        public Rectangle(point p)
        public Rectangle(int w, int l)
        public Rectangle(point p, int w, int l)
+-Each of these constructor lets you provide initial  values for different aspects of the rectangle.
+-The origin, the width and length, all three or none.
+-If a class has multiple constructors, they all have the same name but different number of argument or different typed arguments.
+-The compiler differentiates the cnstructors, and knows which one to call, depending on the argument.
+-So when the compiler encounters the  following code, its knows to call the constructor that requirement two integer argument(which 
+  initializes the width and heights of the new rectangle to the values provided by the arguments).
+              Rectangle rect = new Rectangle(100, 200);
+-When the compiler encounter the next line of code, it knows to call the constructor that requires a point(which provides the initial values for
+ the origin of new Rectangle).
+           Rectangle rect = new Rectangle(new point(33, 232));
+-A rectangle constructor that does not take any arguments.
+                    Rectangle rect = new Rectangle();
+-A constructor that does not take any argument is a default constructor.
+-If a class(like the very first version of the point and rectangle classes) does not explicitly define any constructors at all.
+-Java automatically provides  a non-argument constructor that does nothing. thus a class have atleast one constructor.
+
+
+
+Using objects
+-----------------
+-Once you create an objects, you probably want to use it for something.
+-You may need  information from it, want to change its state,  or have it perform some action.
+-object gives you two ways to do these things.
+       Manipulate or inspect its variables.
+       Call its method.
+-ideal object-oriented programming discourages the direct manipulation of an object's variable.
+-You can put objects into inconsistent states.
+-An ideal objects provides methods through which you can inspect or change its state.
+-These methods ensures that object never get inconsistant state.
+-in some situation, it sometimes makes  sensense to use an objects's variable directly.
+-Both the point class and the Rectangle class allow free access to their member variables.
+-You can put the point into an inconsistent state  by setting x and y directly .
+-You can also put the Rectangle objects in an inconsistent state by setting  width, length, or origin.
+-Java provide access contro mechanism whereby classes can restrict or allow access to its variable or method.
+-A class should protect variable against direct manipulation by other  objects if those manipulation could endanger the object state.
+-State changes should then be affected and therefore controlled by method calls.
+-If an object grants access to its variable, you can assume that you can inspect and change them without adverse effects.
+-If a rectangle obect represents a rectangle object in a drawing program and the user dragged it to a new location. 
+-You need to update the rectangle object's point of origin,
+-The rectangle can provide two equivant ways of doing this;
+       1.manipulating the object's origin variable directly.
+       2.call the move method.
+       
+-Rectangle's origin member is accessible to other classes(it's declared public).
+
+
+Referencing an object variable
+----------------------------------------
+-This section focuses on how to move the rectangle by modifying its origin  variable directly.
+-Assume you created a rectangle named rect. To move rect to new location, you could:
+        rect.origin = new point(15, 37);
+-This statement moves the rectangle by setting its points of origin to a new position.
+-rect.origin is the name of rect's  origin variable.
+-You can use these kinds of object variable names in the same  manner as you use other variables names.
+-You use the operator = to assign a value to rect.origin.
+-The Rectangle class has two other variables - width and length that are accessible to objects outside of  the class.
+-You use the same notation to access them and calculate the rectangles area using this statement(or just call the area method).
+    area=rect.height*width;
+-
 
   
   
