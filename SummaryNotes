@@ -39,11 +39,11 @@ N/b compilation occurs once while interpretation occur each time the program is 
 -The core API is the API included in every full implementation  of the java platform.
 -It gives the following features:
                  The essentials:objects, strings, threads, numbers, inputs, and outputs, data structures, system properties, data and time.
-                 Applets: the sets of conventions used by java applets
+                 Applets: the sets of conventions used by java applets.
                  networking is the tcp and UDP sockets and IP addresses.
-                 internationalizations, helps in localising for users widewide.
+                 internationalizations, helps in localising for users worldwide.
                  security - both low level and high level including the electronic signature.
-                 Software components - 
+                 Software components - known as javabeans, can plug into existing components architecture such as microsoft ole/com
                  object serialization - allows lightweight persistence and communication via Remote method invocation(RMI)
                  java Database connectivity(JDBC) - provides uniform access to a wide range of relational databases.
 -JVM and Java API insulates the java program from hardware dependancies.
@@ -109,8 +109,8 @@ N/b compilation occurs once while interpretation occur each time the program is 
        
        Using a class variable
        ----------------------------
-       Example:
-           System.out.println("AM learning java")
+       Exampl
+       System.out.println("AM learning java")
        -The construct System.out is the full name of the out variable in the system class.
        -The application never instantiates the system class. Instead, it refers to out directly through the class.
        -This is because out  is a class variable -a variable  associated with a class rather than with an object.
@@ -132,7 +132,7 @@ N/b compilation occurs once while interpretation occur each time the program is 
          import java.awt.Graphics;
          public class LetUsAllLearnJava extends Applet{
            public void pain(Graphics g){
-           g.drawString("Dudes i fkoech tell you to learn java" 30, 20);
+           g.drawString("Dudes learn java" 30, 20);
            }
           }
       
@@ -146,8 +146,8 @@ N/b compilation occurs once while interpretation occur each time the program is 
         <title>title name</title>
         </head>
         <body>
-        <Applet Code="yourfilename.class" Width 140px height=20>
-        </Applet>
+        <APPLET CODE="yourfilename.class" WIDTH=140px HEIGHT=20>
+        </APPLET>
         </body>
         </html>
             
@@ -162,22 +162,21 @@ to run within a java-enabled browser.
 -similar to the way libraries group c functions.
 -Every applet must define a subclass of the applet class.
 -Applet inherit a great deal of functionality from the applet class, ranging  from the  ability
- to communicate with the borwser to the ability to present a 
+ to communicate with the bowser to the ability to present a 
 Graphical user Interface(GUI).
 -Applet implements just one method: paint: every applet must implement at least one of the following methods:
  init, start, or paint.
--Unlike the java applivation, java applet do not need to implement a main method.
+-Unlike the java application, java applet do not need to implement a main method.
 -Applet are designed to be included  in HTML page.
 -Using the <APPLET> HTML tag, you specify(at a minimum) the location of the applet subclass and the dimension of the applet's on screen display area.
 -When a java-enabled browser  encounters an <applet> tag, it reserver on screen space for the applet,
- loads the applet subclass onto the computer on which  it is executing and creates an instance odf the applet subclass
+ loads the applet subclass onto the computer on which  it is executing and creates an instance of the applet subclass
 
 Importing classes and packages
 ----------------------------------
 -The java.applet. and java.awt prefixes tell the compiler which packages it should search for the applet and Graphic class.
 -the Java.applet packages contains classes that are essential to java applet.
--The java.awt package contains classes used by all java program with a GUI
--The java.awt package contain classes used by all java programs with a GUI
+-The java.awt package contains classes used by all java program with a GUI.
 -To import  entire package: 
            import java.applet.*;
            import java.awt.*;
