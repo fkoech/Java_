@@ -1243,7 +1243,8 @@ Using objects
 Referencing an object variable
 ----------------------------------------
 -This section focuses on how to move the rectangle by modifying its origin  variable directly.
--Assume you created a rectangle named rect. To move rect to new location, you could:
+-Assume you created a rectangle named rect. 
+To move rect to new location, you could:
         rect.origin = new point(15, 37);
 -This statement moves the rectangle by setting its points of origin to a new position.
 -rect.origin is the name of rect's  origin variable.
@@ -1252,9 +1253,95 @@ Referencing an object variable
 -The Rectangle class has two other variables - width and length that are accessible to objects outside of  the class.
 -You use the same notation to access them and calculate the rectangles area using this statement(or just call the area method).
     area=rect.height*width;
--
+-In general, to refer to an object's variable, append the name of the variable to an object reference with an interventing period(.).
+     objectReference.variable
+-The first part of the variable's name, objectReference, must be a reference to an object.
+-you can use an object name here just as was done in the previous example with rect.
+-you can also use an expression that returns an objects reference.
+-Recall that new operator returns a reference to an object.
+-So you could use the value returned from new to access a new object variable.
+      height = new Rectangle().height;
+-This statement creates a new Rectangle object and immediately gets its height.
+-Effectively the statement  calculates the default height of a rectangle.
+-After this statement has been executed, the program no longer has a reference  to the rectangle that has created because the program never stored the reference
+in a variable.
+-Thus objects become eligible for garbage collection.
+-All objects of the same type have the same type have the same variable.
+-All Rectangle objects have origin, width, and length variable that they  got from the rectangle class.
+-When you access a variable through an object reference, you reference that particular objects.
+-Suppose that bob is also a rectangle in your drawing program and it has different length and width.
+-Calculating area called rectangle named bob, which differs from the previous instruction that calculates the are  of rect.
+       area=bob.length+*bob.width;
 
-  
+
+
+Calling an object's methods
+--------------------------------
+-To move rect to a new location using its move method.
+            rect.move(15, 37);
+-The java statement above calls rect's  move method with two integer parameter, 15 and 37.
+-It moves the rect object because the move method assign new values to origin.x and origin.y  and is equivalent to assignment statement used previously.  
+           rect.origin = new point(15, 37);
+-the notation used to call an object's method is similar to that used when referencing to its variable.
+-You append the  method named to an object reference with an interventing period(.)
+-Also, you provide any argument to the method within enclosed parenthesis.
+-If the method does not require any argument, use empty parenthesis.
+        objectReference.methodName(argumentList);
+        objectReference.methodName();
+-Object  reference must be a reference to an object.
+-You can use a variable name here, but you also can use any expression that returns an object reference.
+-The new operator returns an object reference, so you can use the value returned from new to call a new object's method.
+          new Rectangle(100, 50).area()
+-The expression new Rectangle(100, 50) returns an object reference that refers to a rectangle object.
+-You use the dot notation to call the new Rectangle's area method to compute the area of the new rectangle.
+-some method, like area, returns a value. For methods that returns a value, you can use the method call in expression.
+-You can assign the return value to a variable,  use it to make a decision or control a loop.
+-This code assigns the value returned by area to a variable.
+        int areaOfRectangle = new Rectangle(100, 50).area();
+-Invoking a method on a particular object is the same as sending a message to that object.
+-In this case the object is Rectangle called rect.
+
+
+
+Cleaning up unused objects.
+----------------------------
+-The java runtime environment deletes objects when it determines that they are no longer being used.
+-This process is called garbage collection.
+-An object is more eligible to garbage collection when there are no more reference to that object.
+-Reference that are held in a variable are naturally dropped when the variable goes out of scope.
+-or you can explicitly drop an object reference by  setting the value to null.
+
+
+
+The garbage collector.
+---------------------------
+-Java platform has a garbage collector that periodically frees the memory used by objects that are no longer  needed.
+-It is a mark-sweep garbage collector.
+-A mark-sweep garbage collector scans dynamic memory area for objects and marks those that are referenced.
+-After all possible paths  to objects are investigated, unmarked objects(unreferenced objects) are known to be garbage and are collected.
+-A more complete description of java's garbage collection algorithm might be 'a  compacting, mark-sweep collector with some conservation scanning).
+-The  garbage collector  runs in a low-priority thread and runs either synchronously or asynchronously depending on the situation and the system on which java is running
+-It runs synchronously when the system runs out of memory or in response to a request from a java program.
+-Java garbage collector runs asynchronously  when the system is idle, but is does so  only on system, such as windows 95/NT.
+-That allow the java runtime environment to note when a thread has begun and to interrupt another thread.
+-As soon as another  thread becomes active, the garbage collector is asked to get to a  consistent state and terminated.
+
+
+Finalization
+--------------------
+-Before an object gets garbage-collected, the garbage collector gives the object an opportunity to 
+  clean up after itself through a call to the object's finalize method.
+-During finalization, an object may wish to free system resource such as files and sockets or to drop reference  to other objects.
+ so that is becames eligible for garbage  collection.
+-The Finalized method for the Rectangle class  releases the point object  by setting its reference to  origin  to null.
+         protected void finalize() throws throughable{
+               origin = null;
+               Super.finalize();
+          }
+-The finalize method is a member of the object class.
+-The object class is top of java's class hierarchy and the parent of everything.
+-A class should overide the finalize method to perform  any finalization necessary for object 
+
   
   
   
