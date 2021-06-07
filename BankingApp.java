@@ -88,7 +88,7 @@ class BankingAccount{
 	  {
 	 case 'A':
 	     System.out.println("-----------------------");
-	     System.out.println("Balance "+ Balance);
+	     System.out.println("Balance "+ balance);
 	     System.out.println("---------------------");
 	     System.out.println("\n");
 	     break;
