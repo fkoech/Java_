@@ -1341,10 +1341,113 @@ Finalization
 -The finalize method is a member of the object class.
 -The object class is top of java's class hierarchy and the parent of everything.
 -A class should overide the finalize method to perform  any finalization necessary for object 
+           Public class Stack{
+             private vector items;
+             public Stack(){
+                 item = new Vector();
+                 }
+             public object push(Object item){
+                 items.addElement(item);
+                 return item;
+              }
+              public syncronized Object pop(){
+                  int len = item.size();
+                  Object obj = null;
+                  if (len==0)
+                     throw new emptyStackException();
+                  obj = item.elementAt(len-1);
+                  item.removeElementAt(len - 1);
+                  return obj;
+                  }
+              public boolean isEmpty(){
+                  if (items.size()== 0)
+                     return true;
+                  else
+                     return false;
+              protected void finalize() throws Throwable{
+                  items = null;
+                  super.finalize();
+                }
+          }
+-Class declaration can say more about a class such as the  name od the supperclass and
+ if it can be subclassed.
+-The java compiler assumes certain defaults: a nonpublic, nonabstract, nonfinal subclass.
+-The public modifer declares that the  class can be used by any class regardless of its package.
+-abstract declares that the class cannot be instantiated,
+-Final declare that the class cannot be subclassed.
+-The class keyword indicate the the compiler that this is a class declaration.
+-Extend super. extend clause identifies super as the superclass of the class, thereby inserting the class within hierachy.
+-Implements interfaces. To declare that your class implement one or more interfaces you use the keyword implement.
+-The class body contains all of the code that provides for the  life cycle of the object created from it.
+-constructors for initializing new objects, declaration  for the variable that provide the 
+state of the class and its objects.
+-Method to implement the behavior of the class and its objects.
+-And when necesary a finalize method to provide for cleaning up an object after it had done its job.
+-Variables and methods collectively are members.
+-Constructors are not methods Nor are they members.
+-The stack class defines one member variable in its body to contain its element the item vector.
+-It also define one constuctor - the default constructor and four methods: push, pop, 
+isEmpty, and finalize.
+-Finalize is a special method that privides for the cleanup of the stack object.
 
-  
-  
-  
+Constructors
+---------------
+-Used to initilize a new object of a class.
+-A constructor has the same name as the class.
+-Java support name overloading for constuctors so that a class can have any number of constructor.
+-All of which have the same name.
+    public stack(){
+     item = new vector(10);
+    }
+    public class (int initialSize){
+      items = new Vector(initialSize);
+     }
+-Both constructors share the same name, stack but have different parameter.
+-The compiler differenciate these constuctors based on the number of parameter in the list.
+-Typically, the constructor uses its argument to initialize the new object's state.
+When creating  an object, choose the constructor  whose argument best reflect how  you want to initialize the new object.
+-Base on the number and type of the argument that you pass into the constructor, the 
+compiler can determine which constructor to use.  
+         class AnimationThread extend Thread{
+            int framesPersecond;
+            int numImages;
+            Image[] images;
+         AnimationThread(int fps, int num){
+            super("AnimationThread");
+            this.framePersecond = fps;
+            this.numImages = num;
+            
+            this.images = new Image[numImages];
+            for (int i = 0; i<= numImages; i++){
+             // load all the images
+             }
+            }
+-the constructor perform animation, sets up some default values, such as the frame speed, 
+and the number of  images and then load the image.
+-The body of a constructor is like the body  of a method, that is it contains  local 
+ variables declaration, loops and other argument.
+-super("AnimationThead"); - invoke a constructor provided by the superclass of animationThread.
+-This particular thread constructor takes a string that sets  the code written in a class's supperclass.
+-Some classes must call their superclass constructor  in order for the object to work properly.
+-When declaring a constructor, use the following specifiers.
+-private   - no other class can instantiate your class.
+-protected - only subclass of your class can create instance of it.
+-public - any class can create an instance of your class.
+-Package - only class within the same package as your class can construct an instance of it.
+-Constructor can provide a way to initialize a new object.
+
+
+
+Declaring a member variable
+--------------------------
+private vector items;
+-this declares a member variable and not some other variable like local variable.
+-Because the declaration appears within the class body but outside of  any method constructors.
+-The member variable declares is named items, and its data type is vector.
+-Also the private keyword identifies, items as a private member, this means that only 
+code within the stack class access it.
+-
+ 
   
   
   
