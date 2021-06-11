@@ -1550,11 +1550,84 @@ Details of a method declaration
  -The isEmpty method returns either the boolean value true or false, depending on the outcome of a test.
  -The isEmpty method returns  a primitive type. 
  -Method also return a reference type.
- 
-  
-  
-  
+      public synchronized Object pop(){
+         int len = item.size();
+         object obj = null;
+         if (len == 0)
+         throw new EmptStackException();
+        obj = items.elementAt(len -1);
+        items.removeELementAt(len -1);
+        return obj;
+        }
+-stack declares the pop method that returns the object reference type.
+-When a method return  an object such as pop does, the class of the returned object must be either a subclass of or the extect
+class of the return type.
 
+
+
+Method names
+----------------------
+-java support method name overloading so that multiple method can share the same name.
+-Suppose you are writing a class that can render various types of data(String,
+interger  and so on) . You need to write a method that knows how to render each data type.
+-For other languages you have to think of a new name for each method unlike java which you can 
+use the same name but declare different type of parameter to each method.
+      class DataRenderer{
+        void draw(String s){
+        ...
+        }
+        void draw(int i){
+        ...........
+        }
+        void draw(float f){
+        ....
+        }
+ -Overloading method are differentiated by the number and type of arguments passed into the method.
+ -You cannot declare more than one method with the same 
+  name and the same number and type of argument because the compiler cannot differentiate them.
+ -so, draw (String s) and draw(String t) are identical and results in a compiler error.
+ -A class may overrride  a method in its supperclass.
+ -The overriding method must have the same name, return type, and parameter.
+ 
+ 
+ passing information into a method
+ ------------------------------------
+ -When you write a method you declare  the number and type of arguments required by that method.
+ -You must declare the type and number for  each argument in the method signature.
+ -For example:
+    method that computes the monthly payment for a home loan.
+    the payment is based in the amount of the loan, the interest rate, the length of the loan(the number of periods), 
+    and the future value of the loan.(presumably the future value of the loan is zero because at the end of the loan, the loan will have been paid off).
+             double computePayment(double loanAmt, double rate, double futureValue, int numPeriods){
+                   double I, partial1, denominator, answer;
+                   I = rate / 100.0;
+                   partial1 = Math.pow(1+I), 0.0 - numPeriods));
+                   denominator = (1-partial1)/I;
+                   answer = ((-1 * loanamt)/denominator)-((futureValue * partial1)/denominator);
+                   return answer;
+                   }
+-This method take four arguments: the loan amount, the interest rate, the future value and the number of period.
+-The set of arguments to any method is a comma-delimited list of variable declaration in which each variable declaration is a type/ name pair.  
+         type name
+
+
+Argument  types
+-----------------
+-in java ou can pass an arguments of any valid java data tpe into a method.
+-This includes primitive data type such as double, float, and integer.
+-Example:
+      a method creating a new polygon object from a list of points(a point is a class that represents an x, y coordinate)
+              static Polygon polygonFrom(point[] listOfPoints){
+                ..............
+                }
+-unlike other languages you cannor pass method into java method.But dyou can pass an object into a method and then invoke the object's method.
+
+
+argument Name
+--------------------
+-When you declare an argument to a java method, you provide a name for that argument. 
+This is used within the method body to refer to the item.
+-
 
 
 
