@@ -336,6 +336,7 @@ What is inheritance
 -Above lines of code describe the traditional java language features, ie variables, data type, operators, expressions, control flow statements.
 
 
+
 Variables and data types
 ------------------------------
 -Variables are entities (values and data) that act or are acted upon.
@@ -1446,9 +1447,110 @@ private vector items;
 -The member variable declares is named items, and its data type is vector.
 -Also the private keyword identifies, items as a private member, this means that only 
 code within the stack class access it.
--
+-Declaration can be more complex. You can specify not only the type, name and access level 
+but also other attributes, including whether  the variable is a class  or instance variable
+and whether it is constant.
+
+Components of member variable declaration
+-----------------------------------------------
+-access level - lets you control which other classes have access to a member variable.
+              - It uses one of the four access levels: public, protected, package, private.
+-Static - Declares this is a class variable rather than an instance variable.
+          you also use static to declare class method.
+          
+-Final - indicate that the value of this member cannot change
+-transient - Used in object serialization,
+-Volatile - Volatile keyword is used to privent  the compiler from performing certain optimizations on a member.
+-type - like other variable, a membe variable must have a type.
+       you can use primitive  types names such int, float, boolean or reference types such as array, objects, or interface.
+-Name - a member variable's name can be any legal java identifier and by convention, begin with lowercase letter.
+        You cannot declare more than one member variable with the same name in the same class.
+        but a subclass can hide a member variable of the same name in its superclass.
+             public class Stack{
+                 private Vector items;
+                 //a method with the same name as a member variable.
+                 public Vector items(){
+                 .............
+                 }
+                }
  
   
+  Implimenting methods
+  ----------------------------
+public Object push(Object item)
+{
+ item.addElement(item);
+ return item;
+ }
+-this method pushes an object, the one passed in an argument, onto the top of the stack, and return it.
+-Like a class, a method has two major parts: method declaration and method body.
+-The body declaration defines all of the method's  attributes, such as access level, return type, name, and argument.
+     push - access level
+     object - return type
+     push - method name
+     object item - argument.
+-The method body is where all the action takes place.
+-it contains the java instruction that implements the method.
+
+
+
+Details of a method declaration
+--------------------------------------
+-A method's declaration provides a lot of information about the method to the compiler.
+-To the runtime system, and to other classes and objects.
+-Included is  not only the name of the method, but also such information as the return  type of the method.
+-The number and type of the arguments required by the method and which other classes and objects can call the method.
+-Most method attributs can be declared implicityly.
+-The only required element of a method declaration are the method's name, its return type, and a pair of parentheses().
+ 
+ 
+ elements of a method declaration
+ -------------------------------------
+ -accessLevel - access level for this method.
+ -Static - this a class method.
+ -final - method cannot be overriden.
+ -native - method implementated in another language.
+ -synchronized - method require a monitor to run.
+ -ReturnType methodName - these return type and method name.
+ -(paramlist) - the list of arguments.
+ -throw exceptions - the exception thrown by this method.
+ 
+ -AccessLevel - As with member vaiable, you can control other classes have access to  method using
+  one of four access level:
+  public, package, private and protected.
+ -Static - as with member vriable, static declares  this methosd as class method rather than an instance method.
+ -Abstract - An abstract  method has no implementation and must be a member of an abstract class.
+ -final - A final method cannot be overriden b subclasses.
+ -native - if you have significant library of function written in another language such as c.
+         you may wish to preserve that investment and use those function from java.
+         methods implemented in language other than java are called native method and declared
+         as such using the native keyword.
+-synchronized - concurrently running threads often invoke methods that operate on the same data.
+               the methods may be declared synchronized to ensure that the threads access  information in a thread-safe manner.
+               
+-Returntype - java require that a method declared the data type of the value  that it return.
+              if your method does not return a value, use the keyword void for the return type.
+-methodName - A method name can be any legal java identifier.
+-paramlist  -   You pass information to the method through its argument.
+ throws exception - if your method throws any checked exceptions, your method declaration must indicate type of those exceptions.
+ 
+ Returning a value from a method
+ ----------------------------------
+ -you declare a method's return type in its method declaration.
+ -Within the body of the method, you use the return operator to return the value.
+ -A method that is  not declared void must contain a return statement.
+ -The stack class declares the isEmpty method, which return  a boolean.
+      public boolean isEmpty(){
+             if(items.size()==0)
+               return true;
+             else
+                 return false;
+ -The data type of the return value must match the method's return type.
+ -You can't return an object type from a method declared a return an integer.
+ -The isEmpty method returns either the boolean value true or false, depending on the outcome of a test.
+ -The isEmpty method returns  a primitive type. 
+ -Method also return a reference type.
+ 
   
   
   
