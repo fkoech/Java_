@@ -1627,6 +1627,19 @@ argument Name
 --------------------
 -When you declare an argument to a java method, you provide a name for that argument. 
 This is used within the method body to refer to the item.
+-A method argument can have the same name as one of the class's member variables.
+-In this case, the argument  hides the member variable.
+-Arguments that  hide member variable s are often used in setter method to change the value of a member variabe 
+-A circle class and its setRadius method.
+    public class Circle{
+        int x, , radius;
+        public void setRadius(int radius){
+        .........
+        }
+       }
+-The circle class has three member variable x, y, and radius.
+-The setRadius method fofr the circle classs accept one integer argument which shares its name with the 
+  member variable to be set.
 -
 
 
