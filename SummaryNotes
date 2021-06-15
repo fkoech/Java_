@@ -1665,7 +1665,39 @@ This is used within the method body to refer to the item.
  -consider this series of java statement which attempt to retrieve the current color of a pen object in a graphics application.
                          int r = -1, g=-1,  b=-1;
                          pen.getRGBcolor(c, g, b);
-                         System.out.println("red ="+r+", green="+g+", blue="+
+                         System.out.println("red ="+r+ ",green="+g+ ",blue="+b);
+-When the getRGBColor method is called, the variables r, g,  and b all have the value -1.
+-The caller is expecting  the getRGBColor method to set the values of r, g, and b to the current  red, green  and blue color settings of the pen, thereby  returning all
+  three values.
+-Java runtime  system passes the values(-1) of the variable into the getRGBColor not a reference to the  r, g, and b variable.
+-Visualize call to getRGBColor like :getRGBColor(-1,-1, -1).
+-When control passes into the getRGBColor method, the arguments come into scope(get allocated).
+and are initialized to the value passed into the method.
+     public class Pen{
+         int redValue, greenValue, blueValue;
+         public void getRGBColor(int red, int green, int blue){
+            //red, green, blue have been created adn their values are -1
+            ........
+            }
+           }
+-So the getRGBColor gets access to the values(not the actual variable) of r, g, and b in the caller through its arguments red, green, and blue respectively.
+-The method gets its own copy of the value to use within the scope of the method.
+-Any changes made to these local copies are not reflected in the original variables from the caller.
+-implementation of getRGBColor that goes to the previous method declaration.
+        public class Pen{
+             int redValue, greenValue, blueValue;
+             ...
+             public void getRGBColor(int red, int blue, int green){
+             red = redValue;
+             blue = blueValue;
+             green = greenValue;
+-The getRBGColor method will not work as intended.
+-When control gets to the println statement, getRBGColor's argument red, green, blue no longer exist.
+-Therefore, the assignment made to them within the method  had no effect: r, g,  and b all still equal to -1.
+   int r=-1, g=-1, b=-1;
+   pen.getRGBColor(r, g, b):
+   System.out.println("red="+r+", green= "+g+",blue="+b){
+   
 
 
 
