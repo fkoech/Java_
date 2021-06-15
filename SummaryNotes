@@ -325,7 +325,7 @@ What is inheritance
    System.out.print("counted" + count + "characters");
    }
   //main method
-  public  static void main(String[] args) throw Exception
+  public  static void main(String[] args) throws Exception
   {
   if (args.length >=1 )
     countChars(new FileReader(args[0]));
@@ -351,7 +351,7 @@ Data types
 -All variable in java must have data type.
 -Data type determines the values that the variable can contain and operation that can be performed on it.
 -Declaring int count declares that count is an integer(int). Interger can only contains only whole number values(both positive and negative) and one can use
-standard arithment operations such as +, - , / on interger to perform the standard arithmentic operation(addition, subtraction, multiplication, and division).
+standard arithmentic operations such as +, - , / on interger to perform the standard arithmentic operation(addition, subtraction, multiplication, and division).
 -The are two categories of data types in the java language
             primitive
             reference
@@ -424,7 +424,7 @@ n/b Variable may have the same name as another variable whose declaration appear
 
 Scope
 ------------
--A variable's scope  is the block of code within the variable is accessible and determines when the variable is created and destroyed.
+-A variable's scope  is the block of code within which  the variable is accessible and determines when the variable is created and destroyed.
 -The location of the variable declaration within you program establish its scope and places it into one of the following  four caterogiries:
                        member variable
                        Local variable
@@ -447,7 +447,7 @@ Scope
                              - the countChars  method does not have any exception handlers, so it doesn't have any exception-handler parameter.
                              
                              
-                             Variabls initializations
+                             variables initializations
                              -------------------------
 -Local variable and member variable can be initialized with an assigment statement when they are declared.
 -The data type of both sides of the assignment statement must match.
@@ -1629,18 +1629,43 @@ argument Name
 This is used within the method body to refer to the item.
 -A method argument can have the same name as one of the class's member variables.
 -In this case, the argument  hides the member variable.
--Arguments that  hide member variable s are often used in setter method to change the value of a member variabe 
+-Arguments that  hide member variable s are often used in setter method to change the value of a member variable 
 -A circle class and its setRadius method.
     public class Circle{
-        int x, , radius;
+        int x, y, radius;
         public void setRadius(int radius){
         .........
         }
        }
 -The circle class has three member variable x, y, and radius.
--The setRadius method fofr the circle classs accept one integer argument which shares its name with the 
+-The setRadius method for the circle classs accept one integer argument which shares its name with the 
   member variable to be set.
--
+-The argument variable hides the member variable.
+-So radius within the body of the setRadius refers  to the argument , not to the member variable.
+-To access the member variable, you must reference it  through this, the current object.
+      public class Circle{
+       int x, y, radius;
+       public void setRadius(int radius){
+          this.radius = radius;
+       }
+     }
+-Names of method argument cannot be the same as another argument name for the same  method,
+ the name  of any variable local to the method, or the name of any parameter to a catch clause within the same method.
+ 
+ 
+ 
+ pass-by-value
+ ---------------------
+ -In java method, arguments are passed by value. 
+ -When the method is involked, it receives the value of the variable passed in.
+ -When the argument id  primitive type,  pass-by-value means  the method cannot change its value.
+ -When the type is a reference type, pass-by-value  means the method cannot change  the object reference, but the  method can  invoke the object's  
+ method and modify the accessible variable within the object.
+ -This is a source of cofusion- you write a method that attempts to modify  the value of one of its arguments and the method doesn't work as expected. 
+ -consider this series of java statement which attempt to retrieve the current color of a pen object in a graphics application.
+                         int r = -1, g=-1,  b=-1;
+                         pen.getRGBcolor(c, g, b);
+                         System.out.println("red ="+r+", green="+g+", blue="+
 
 
 
