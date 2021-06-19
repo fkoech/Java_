@@ -1696,10 +1696,51 @@ and are initialized to the value passed into the method.
 -Therefore, the assignment made to them within the method  had no effect: r, g,  and b all still equal to -1.
    int r=-1, g=-1, b=-1;
    pen.getRGBColor(r, g, b):
-   System.out.println("red="+r+", green= "+g+",blue="+b){
-   
+   System.out.println("red="+r+", green= "+g+",blue="+b);
+ -passing variables by value affords the programmer some safety.
+ -That is, method cannot unitentionally modify a variable is outside of its scope.
+ -However , you often want a method to be able to modify one or more of its arguments.
+ -The getRGBColor method is a case in point.
+ -The caller wants the method to return  three values  through  its argument.
+ -However, the method cannot  modify  its arguments, and furthermore, a method  can return  only one value  through its return  value.
+ -So how can a method return more than one value or modify some value outside of its scope.
+ -For a method to modify  an argument, it must be a reference type such as class or an array.
+ -Objects and arrays are also passed by value, but the value of an object is a reference.
+ -The effect of that  arguments of reference types are passed  in by reference.
+ -Hence the name. A reference  to an  object  is the address of the object in memory.
+ Now, the argument in the  method  is refering to the same memory location as the caller.
+ -A rewrite of the getRGBColor method so that it actually does what you want.
+ -First you introduce a new object, RGBColor, that can hold the red, greenm and blue values of a color in RGB space:
+           public class RGBColor{
+              public  int red, green, blue;
+              }
+ -Rewrite getGBColor so that it accept an RGBColor object as an argument.
+ -The getRGBColor method returns the current  color of the  pen by setting the red green, and blue method variables of its RGBColor argument.
+           public class pen{
+                 int redValue, greenValue, blueValue;
+                 public void getRGBColor(RGBColor aColor){
+                        a.Color.red= redValie;
+                        a.Color.green = redValue;
+                        a.Color.blue = blueValue;
+                        }
+-Rewrite the calling sequence:
+         RGBColor penColor = new RGBColor();
+         pen.getRGBColor(penColor);
+         System.out.print("red="+penColor.red+", green = "+penColor.green+", blue = "+penColor.blue);
+-The modifications made to the RGBColor object within the getRGBColor method affect the object created in the calling  sequence because the names 
+ penColor(in the calling sequence ) 
+-And  aColor(in the getRGBColor method) reference to the same object.
 
-
+this
+-----------
+-Within a method body, you can use this to refer to the current object. 
+-Why would you want to do this?
+-Typically, within an object's method  body you can just refer directly  to the object's  member variable by name.
+-however , sometimes a member variable is hidden by a method parameter that has the same name.
+-in this case, you need to explicitly refer to a method variable through an object reference.
+-The following  method for the HSBColor class sets the object's member variable  according to the argument passed into  the method.
+-Each argument  to the method has the same name as one of the object's member variable.
+     public class
 
 
 
