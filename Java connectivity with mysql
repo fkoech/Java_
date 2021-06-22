@@ -1,0 +1,15 @@
+-We use mysql as the database.
+-information for the msql database: 
+            driver class.
+            connetion url.
+            username.
+            password.
+-the driver class for mysql database is com.mysql.jdbc.Driver.
+-the connection url for the mysql database is jdbc:mysql://localhost:3306/School.
+-Where the  jdbc is the API,
+-mysql is the use ip address, 
+-3306 is the port  number and school is the database name.
+-We may use any database in such,
+-school  with our database name.
+-the default username for the mysql database is root.
+-It is the password given by the user at the time of installing the mysql database,
