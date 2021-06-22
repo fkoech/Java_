@@ -13,3 +13,21 @@
 -school  with our database name.
 -the default username for the mysql database is root.
 -It is the password given by the user at the time of installing the mysql database,
+
+
+-Example
+    import java.sql.*;
+    class Student{
+        public static void main(String[] args){
+           try{
+              class.forName("com.mysql.jdbc.Driver");
+               connection con = DriverManager.getConnection(
+  
+ JDBC database URL for sql server
+ ------------------------------------
+ -jdbc:sql server://[serverName[\instanceName][:portNumber]]
+  [;property=value[;proporty=value]]
+ -serverName - host name or ip address of the machine on which sql server is running.
+ -instanceName - name of instance to connect to the serverName. The dfault instance is used iff this parameter is not specified.
+ -portNumber - portNumber of the SQL server,  the default is 1433. 
+ - property=value - specify one or more additional connection property.
