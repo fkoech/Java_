@@ -64,7 +64,11 @@ class BankingAccount{
   //method
 
   void showMenu()
-  {
+  {    
+	  //when terminating a string, the logically char c = 0 is equivalent to char c='\0'
+	  //since null(ASCII) byte is 0 but usually poeople tend to do '\0' instead
+	  //Emphasize the character nature of some expression, but the numeric value is just 0.
+	  
 	  char option = '\0';
 	  Scanner scanner = new Scanner(System.in);
 	  System.out.println("Welcome "+ customerName);
