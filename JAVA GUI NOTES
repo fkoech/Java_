@@ -1,0 +1,92 @@
+Swing 
+------
+-It is java graphical user interface(GUI) that includes the GUI components.
+-provides a rich set of widgets and packages to make sophisticated  GUI component.
+-It is part of Java Foundation Class(JFC). Which is an API for java program that provides GUI.
+-Its library is built on top of the java abstract widget toolkit(AWT). an older, platform dependdetn GUI toolkit.
+
+
+Java swing class hierarchy diagram
+----------------------------------------
+object - component - container
+container - window
+          - Jcomponent
+window  - Frame  (JFrame)
+        - Dialog (JDialog)
+JComponent - JText
+           - JComboBox
+           - JLabel
+           - JList
+           - JMenuBar
+           - JOptionPane
+           - JPanel
+           - JScrollBar
+           - AbstractButton
+ JText - JTextField
+       - JTextArea
+ AbstractButton - JButton
+ 
+ 
+ -A container class is a component that can have other components on it.
+ -The should be atleast one container object.
+ - The are three type of Java Swing container.
+       Panel - It is a pure  container and is not a window in itself.
+             - its sole purpose is to organise the components on to a window.
+             
+      frame - is a fully functioning window with its title and window.
+      Dialog - It can be thought of like a window  that pops out when a message has been displayed.
+             -Not a fully functioning window like the frame.
+             
+             
+             
+             What is GUI
+             --------------
+     -Graphical user interface.
+     -A visual experience builder for java application.
+     -It is made up of graphical components like buttons, labels, windows.
+     -Through which user can interact with an application.
+     
+  
+  
+  Java BorderLayout
+  --------------------------
+  -Places components in up to five areas: top, bottom, left, right, and center.
+  
+  Java FlowLayout
+  ------------------
+  -Is the default layout manager for every JPanel.
+  -It simply lays out components in a single row one after the other.
+  
+  
+  Java GridBagLayout
+  -------------------
+  -It is the more sophisticated of all layouts.
+  -It aligns components by placing them  within a grid of cells, allowing components to span 
+   more than one cell.
+  
+  
+  
+  Chat frame
+  ---------------
+  -
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
