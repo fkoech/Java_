@@ -1,0 +1,14 @@
+Will i was trying to do some simple debug and bulding a simple program in java complier in my terminal i encounter such error 
+"""
+System.out.println("I am learning java");
+            ^
+  symbol:   variable out
+  location: class System
+1 error
+"""
+Though it was a simple program like hello world, i got some headache,
+What came to my attention is linter. So we are going to get some experience with linter.
+For your information i normally use sublime text editor with vi editor in all programs that i develop.
+so, what is linting?
+we can define it as a process of checking your code for potential errors. This could be either 
+syntax or the codee style.
